@@ -1,4 +1,4 @@
-# hosplus
+# Hosplus
 
 Our mission is to Revolutionizing Healthcare through Digitalization.
 
