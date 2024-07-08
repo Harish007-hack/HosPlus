@@ -1,17 +1,24 @@
 # hosplus
 
-A new Flutter project.
+Our mission is to Revolutionizing Healthcare through Digitalization.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for Revolutionizing Healthcare through the process of Digitalization.
 
-A few resources to get you started if this is your first Flutter project:
+## Team
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Harish Narayana : FLutter Developer & Team Head
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# HosPlus" 
+Ashwanth K : UI/UX Developer & Designer
+
+Adhithiee Suresh : Flutter Developer
+
+Sathyanarayanan Prasanna : App tester
+
+## Test Each Flavors 
+
+Client : flutter run --flavor client lib/main_client.dart
+
+Doctor : flutter run --flavor doctor lib/main_doctor.dart
+
