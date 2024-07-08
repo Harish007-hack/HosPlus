@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hosplus/flavor_config.dart';
 
-void main() {
-  runApp(const MyApp());
+late StateProvider flavorConfigProvider;
+
+void mainCommon(FlavorConfig config) {
+  flavorConfigProvider = StateProvider((ref) => config);
+  // print(flavorConfigProvider);
+  // print(flavorConfigProvider);
+  // print(flavorConfigProvider);
+  // print(flavorConfigProvider);
+  // print(flavorConfigProvider);
+  runApp(const ProviderScope(child:  MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final title = ref.watch(flavorConfigProvider).appTitle;
+    // print(ref.watch(flavorConfigProvider));
+    // print(ref.watch(flavorConfigProvider));
+    // print(ref.watch(flavorConfigProvider));
+    // print(ref.watch(flavorConfigProvider));
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -31,12 +46,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: title),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends ConsumerStatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -51,10 +66,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  ConsumerState<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends ConsumerState<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -76,6 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    const String? appFlavor = String.fromEnvironment('FLUTTER_APP_FLAVOR') != '' ?
+  String.fromEnvironment('FLUTTER_APP_FLAVOR') : null;
     return Scaffold(
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
@@ -105,9 +122,11 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+            // const Text(
+            //   'You have pushed the button this many times:',
+            // ),
+            ref.watch(flavorConfigProvider).checker,
+            const Text(appFlavor ?? ""),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,

@@ -58,6 +58,22 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "users"
+
+    productFlavors{
+        client{
+            dimension "users"
+            resValue "string", "app_name", "Hosplus"
+            applicationIdSuffix ".client"
+        }
+
+        doctor{
+            dimension "users"
+            resValue "string", "app_name", "Hosplus Doctors"
+            applicationIdSuffix ".doctor"
+        }
+    }
 }
 
 flutter {
