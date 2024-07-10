@@ -16,6 +16,14 @@ Adhithiee Suresh : Flutter Developer
 
 Sathyanarayanan Prasanna : App tester
 
+## Run Application
+
+Head to Debug Section
+
+Select the Flavor you want to run 
+
+Press the Run and Debug Option to start the app
+
 ## Test Each Flavors 
 
 Client : flutter run --flavor client lib/main_client.dart
