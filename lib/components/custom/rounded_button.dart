@@ -17,11 +17,11 @@ class RoundedButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.red,
+          color: btnColor,
           borderRadius: BorderRadius.circular(15),
         ),
-        child: const Center(
-          child: Text("Cancel"),
+        child: Center(
+          child: Text(text),
         ),
       ),
     );

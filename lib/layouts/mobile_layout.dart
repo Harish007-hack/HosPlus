@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hosplus/components/constants/flavor_constant.dart';
+import 'package:hosplus/screens/homescreen.dart';
 class MobileLayout extends StatefulWidget {
   const MobileLayout({super.key,required this.title});
   final String title;
@@ -19,7 +20,7 @@ class _MobileLayoutState extends State<MobileLayout> {
             child: Text("$appFlavor"),
           );
     return Scaffold(
-      body: bodyContent,
+      body: Homescreen(),
     );
   }
 }
