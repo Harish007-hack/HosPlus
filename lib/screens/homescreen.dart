@@ -24,7 +24,7 @@ class _HomescreenState extends State<Homescreen> {
               children: [
                 //Hello Saluation
 
-                Text(
+                const Text(
                   "Hello,",
                   style: TextStyle(
                     fontSize: 20,
@@ -34,21 +34,21 @@ class _HomescreenState extends State<Homescreen> {
 
                 //Name of customer
 
-                Text(
+                const Text(
                   "Adelaide Summers",
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    // color: Colors.black,
                   ),
                 ),
 
-                Padding(padding: EdgeInsets.only(top: 15)),
+                const SizedBox(height: 15,),
 
                 //Quick Search
                 //Heading
 
-                Text(
+                const Text(
                   "Quick Search",
                   style: TextStyle(
                     fontSize: 24,
@@ -56,7 +56,10 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                 ),
 
-                Padding(padding: EdgeInsets.only(top: 5)),
+                // Padding(padding: EdgeInsets.only(top: 5)),
+                const SizedBox(
+                  height: 25,
+                ),
 
                 //Quick search Options
                 // Column(
@@ -179,11 +182,24 @@ class _HomescreenState extends State<Homescreen> {
                 GridView(
                   shrinkWrap: true,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 5 / 2,
-                      crossAxisSpacing: 20,
-                      mainAxisSpacing: 20),
+                    crossAxisCount: 4,
+                    childAspectRatio: 1,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
+                  ),
                   children: const [
+                    RoundedButton(
+                        text: "Balalahaha",
+                        btnColor: Color.fromARGB(232, 112, 94, 94)),
+                    RoundedButton(
+                        text: "Balalahaha",
+                        btnColor: Color.fromARGB(232, 112, 94, 94)),
+                    RoundedButton(
+                        text: "Balalahaha",
+                        btnColor: Color.fromARGB(232, 112, 94, 94)),
+                    RoundedButton(
+                        text: "Balalahaha",
+                        btnColor: Color.fromARGB(232, 112, 94, 94)),
                     RoundedButton(
                         text: "Balalahaha",
                         btnColor: Color.fromARGB(232, 112, 94, 94)),
@@ -273,7 +289,7 @@ class _HomescreenState extends State<Homescreen> {
 
                 //Upcoming Appointments
 
-                Padding(
+                const Padding(
                   padding: const EdgeInsets.only(top: 15),
                   child: Text(
                     "Upcoming Appointments",
@@ -468,68 +484,53 @@ class _HomescreenState extends State<Homescreen> {
 
       //Drawer menu
 
-      drawer: Drawer(
+      drawer: const Drawer(
         backgroundColor: Colors.white,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             //Drawer Heading
 
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 45),
-              child: Text(
-                "HosPlus",
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
+            Column(
+              children: [
+                DrawerHeader(child: Icon(Icons.h_plus_mobiledata,size: 50,)),
+                
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.person,
+                      color: Colors.black,
+                    ),
+                    title: Text(
+                      "Profile",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-
-            //divider
-
-            Divider(
-              color: Colors.white,
-            ),
-
-            //Drawer options
-
-            //Profile
-
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: ListTile(
-                leading: Icon(
-                  Icons.person,
-                  color: Colors.black,
+                
+                //Settings
+                
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.settings,
+                      color: Colors.black,
+                    ),
+                    title: Text(
+                      "Settings",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
                 ),
-                title: Text(
-                  "Profile",
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-            ),
-
-            //Settings
-
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: ListTile(
-                leading: Icon(
-                  Icons.settings,
-                  color: Colors.black,
-                ),
-                title: Text(
-                  "Settings",
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
+              ],
             ),
 
             //Logout
 
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10,vertical: 20),
               child: ListTile(
                 leading: Icon(
                   Icons.logout,
