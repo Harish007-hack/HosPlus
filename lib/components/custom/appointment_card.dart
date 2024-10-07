@@ -31,7 +31,7 @@ class AppointmentCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Card.outlined(
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(10.0),

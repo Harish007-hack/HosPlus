@@ -110,7 +110,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
           ),
           AspectRatio(
-            aspectRatio: width > 400 ? 1.6 : 1.4,
+            aspectRatio: width > 400 ? 1.45 : 1.4,
             child: GridView(
               padding: const EdgeInsets.all(0),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

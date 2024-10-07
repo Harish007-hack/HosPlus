@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hosplus/components/constants/flavor_constant.dart';
+import 'package:hosplus/screens/booking_screen.dart';
+import 'package:hosplus/screens/search_results_screen.dart';
+import 'package:hosplus/screens/search_screen.dart';
+
 class MobileLayout extends StatefulWidget {
-  const MobileLayout({super.key,required this.title});
+  const MobileLayout({super.key, required this.title});
   final String title;
 
   @override
@@ -19,7 +23,7 @@ class _MobileLayoutState extends State<MobileLayout> {
             child: Text("$appFlavor"),
           );
     return Scaffold(
-      body: bodyContent,
+      body: SearchResultsScreen(),
     );
   }
 }
